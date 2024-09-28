@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Path 
+from fastapi import Path, FastAPI, HTTPException  
 from typing import Annotated
 
 app = FastAPI()
