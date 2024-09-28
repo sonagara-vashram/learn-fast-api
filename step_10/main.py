@@ -71,7 +71,7 @@ class User(BaseModel):
     description: str | None = None
     tax: float | None = None
     tags: set[str] = set()
-
+    
 @app.put("/users/{user_id}")
 async def update_user(user_id: int, user: User):
     """
