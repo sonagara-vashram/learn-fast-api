@@ -1,0 +1,24 @@
+ - examples in JSON Schema - OpenAPI :-
+
+
+    - Path()
+    - Query()
+    - Header()
+    - Cookie()
+    - Body()
+    - Form()
+    - File()
+
+        In FastAPI, **Examples in JSON Schema - OpenAPI** allow developers to provide sample data for various request components like Path, Query, Header, Cookie, Body, Form, and File parameters. These examples are crucial for generating user-friendly API documentation. In the case of `Path()`, you can specify a sample value to demonstrate how the path parameters should be structured in URLs. For `Query()`, providing examples helps clarify how query strings are expected to look. Similarly, `Header()` and `Cookie()` allow you to declare examples of headers and cookies sent in HTTP requests, aiding in understanding the correct formatting. For more complex data structures, like request bodies, the `Body()` function supports defining detailed examples of JSON payloads, which helps users test API endpoints with the correct data format. `Form()` and `File()` parameters are useful when working with file uploads or form submissions, and providing examples here illustrates how to submit files and form data properly. All of these examples are displayed in the automatically generated OpenAPI documentation, making it easy for developers and consumers to interact with the API by showing them practical examples of how to structure their requests, resulting in a smoother integration process.
+
+
+ - Pydantic and FastAPI ```examples``` parameter :-
+
+        When you add examples inside a Pydantic model, using schema_extra or Field(examples=["something"]) that example is added to the JSON Schema for that Pydantic model.
+
+        And that JSON Schema of the Pydantic model is included in the OpenAPI of your API, and then it's used in the docs UI.
+
+        In versions of FastAPI before 0.99.0 (0.99.0 and above use the newer OpenAPI 3.1.0) when you used example or examples with any of the other utilities (Query(), Body(), etc.) those examples were not added to the JSON Schema that describes that data (not even to OpenAPI's own version of JSON Schema), they were added directly to the path operation declaration in OpenAPI (outside the parts of OpenAPI that use JSON Schema).
+
+        But now that FastAPI 0.99.0 and above uses OpenAPI 3.1.0, that uses JSON Schema 2020-12, and Swagger UI 5.0.0 and above, everything is more consistent and the examples are included in JSON Schema.
+
