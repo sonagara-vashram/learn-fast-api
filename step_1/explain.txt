@@ -1,0 +1,21 @@
+Code Explaination :-
+
+    step - 1 : from fastapi import FastAPI
+
+        This imports the FastAPI class from the FastAPI library. FastAPI is used to build APIs in Python.
+
+    step - 2 : app = FastAPI()
+
+        Here, an instance of the FastAPI class is created and assigned to the variable app. This app object represents the main application, where you define all the routes or endpoints.
+
+    step - 3 : @app.get("/")
+
+        This is a route decorator. It tells FastAPI that when a GET request is made to the root URL ("/"), it should call the function defined just below it. The root URL here is just the base of the application, like http://localhost:8000/.
+    
+    step - 4 : async def root()
+
+        This is an asynchronous function named root, which will handle the GET request. FastAPI supports asynchronous functions to handle many requests efficiently without blocking the server.
+    
+    step - 5 : return {"message": "Hello World"}
+
+        When the root function is called, it returns a JSON response with a key-value pair, where the key is "message" and the value is "Hello World". FastAPI automatically converts this Python dictionary into a JSON response.
