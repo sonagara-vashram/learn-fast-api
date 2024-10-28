@@ -6,16 +6,16 @@ from typing import Set, FrozenSet, Optional
 
 # Pydantic Model using different data types
 class SampleModel(BaseModel):
-    user_id: UUID  # UUID
-    created_at: datetime  # datetime.datetime
-    birth_date: date  # datetime.date
-    login_time: time  # datetime.time
-    session_duration: timedelta  # datetime.timedelta
-    tags: Set[str]  # Set of unique strings
-    permissions: FrozenSet[str]  # Frozen set, immutable collection
-    data: bytes  # Bytes data
-    balance: Decimal  # Decimal for precise floating-point arithmetic
-    is_active: Optional[bool] = None  # Optional boolean value
+    user_id: UUID  
+    created_at: datetime  
+    birth_date: date  
+    login_time: time  
+    session_duration: timedelta  
+    tags: Set[str]  
+    permissions: FrozenSet[str]  
+    data: bytes  
+    balance: Decimal  
+    is_active: Optional[bool] = None  
 
 # Example usage
 example_data = {
