@@ -1,5 +1,4 @@
 # Extra JSON Schema data in Pydantic models
-
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
