@@ -63,9 +63,7 @@ async def update_item(item_id: int, item: Item):
     results = {"item_id": item_id, "item": item}
     return results
 
-
 # Set Type
-
 class User(BaseModel):
     name: str
     description: str | None = None
@@ -215,7 +213,6 @@ async def create_offer(offer: Offer):
         ```
     """
     return offer
-
 
 if __name__ == "__main__":
     import uvicorn
