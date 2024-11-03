@@ -23,7 +23,6 @@ async def read_item(item_id: int):
         raise HTTPException(status_code=400, detail="Item ID must be a positive integer")
     return {"item_id": item_id, "description": f"Details for item {item_id}"}
 
-# Order the parameters as you need
 @app.get("/items/{item_id}")
 async def read_items(
     q: str, item_id: Annotated[int, Path(title="The ID of the item to get")]
